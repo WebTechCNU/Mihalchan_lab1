@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>My page</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <ul>
+        <li><a href="#id01"><img src="avatar.png" height="60px"></a></li>
+        <li><a href="#id02">Завдання #1</a></li>
+        <li><a href="#id03">Завдання #2</a></li>
+        <li><a href="#id04">Завдання #3</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div id="id01" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <header class="container">
+              <a href="#" class="closebtn">×</a>
+              <h2>Information</h2>
+            </header>
+            <div class="container">
+              <img src="img/avatar.png" height="60px">
+              <p>Name: <b>Teodor</b></p>
+              <p>Age: <b>19</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="id02" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <header class="container">
+              <a href="#" class="closebtn">×</a>
+              <h2>Завдання #1</h2>
+              <p>Знайти суму і добуток цифр числа, що вводиться.</p>
+            </header>
+            <div class="container">
+              <input oninput="calculate1()" type="number" id="number" min="1">
+              <p id="result1"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="id03" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <header class="container">
+              <a href="#" class="closebtn">×</a>
+              <h2>Завдання #2</h2>
+              <p>Обчислити кількість введених слів у тексті.</p>
+            </header>
+            <div class="container">
+              <input oninput="calculate2()" id="text" type="text">
+              <p id="result2"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="id04" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <header class="container">
+              <a href="#" class="closebtn">×</a>
+              <h2>Завдання #3</h2>
+              <p>Перевести одні величини у інші за вибором ( байти, кілобайти, мегабайти, гігабайти, терабайти).</p>
+            </header>
+            <div class="container">
+              <form>
+                <input oninput="convert()" type="text" id="inputValue">
+                <select class="but" onchange="convert()" id="inputUnit">
+                  <option value="byte">Байти</option>
+                  <option value="kilobyte">Кілобайти</option>
+                  <option value="megabyte">Мегабайти</option>
+                  <option value="gigabyte">Гігабайти</option>
+                  <option value="terabyte">Терабайти</option>
+                </select>
+                <br><br>
+                <input class="input_dis" type="text" id="outputValue" disabled>
+                <select class="but" onchange="convert()" id="outputUnit">
+                  <option value="byte">Байти</option>
+                  <option value="kilobyte">Кілобайти</option>
+                  <option value="megabyte">Мегабайти</option>
+                  <option value="gigabyte">Гігабайти</option>
+                  <option value="terabyte">Терабайти</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
+        <div class="calculator">
+          <input type="text" id="result" disabled>
+          <button onclick="clearResult()">AS</button>
+          <button onclick="calculate('\(')">(</button>
+          <button onclick="calculate('\)')">)</button>
+          <button onclick="calculate('/')">/</button>
+          <button onclick="calculate('7')">7</button>
+          <button onclick="calculate('8')">8</button>
+          <button onclick="calculate('9')">9</button>
+          <button onclick="calculate('*')">*</button>
+          <button onclick="calculate('4')">4</button>
+          <button onclick="calculate('5')">5</button>
+          <button onclick="calculate('6')">6</button>
+          <button onclick="calculate('-')">-</button>
+          <button onclick="calculate('1')">1</button>
+          <button onclick="calculate('2')">2</button>
+          <button onclick="calculate('3')">3</button>
+          <button onclick="calculate('+')">+</button>
+          <button onclick="calculate('\**')">^</button>
+          <button onclick="calculate('0')">0</button>
+          <button onclick="calculate('.')">,</button>
+          <button onclick="getResult()">=</button>
+        </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="calc.js"></script>
+  <footer>
+    <h5>© 2023 Created by Mihalchan Teodor</h5>
+  </footer>
+</body>
+
+</html>
